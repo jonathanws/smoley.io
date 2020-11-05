@@ -1,5 +1,42 @@
-@import './global-constants';
+@import './_global-constants';
 
-.app {
-	color: var(--accent-color);
+// Text
+h1.ant-typography, .ant-menu {
+	color: var(--font-color);
+}
+h2, h3, h4, h5 {
+	&.ant-typography {
+		color: var(--font-color-1);
+	}
+}
+div, span {
+	&.ant-typography {
+		color: var(--font-color-2);
+	}
+}
+
+// Buttons
+.ant-btn {
+	&.ant-btn-primary {
+		background: var(--accent-color);
+		border-color: var(--accent-color);
+		&:hover, &:focus {
+			background: var(--accent-color-lighter);
+			border-color: var(--accent-color-lighter);
+		}
+		&:active {
+			background: var(--accent-color-darker);
+			border-color: var(--accent-color-darker);
+		}
+	}
+}
+
+// Tabler icons.  (These are svg styles)
+svg.icon-tabler {
+	$size: 24px;
+
+	stroke: var(--font-color-2);
+	stroke-width: 1.5;
+	width: $size;
+	height: $size;
 }

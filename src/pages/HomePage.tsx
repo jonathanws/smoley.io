@@ -1,19 +1,18 @@
-import '../styles/_screen-sizes.scss';
+import './homePage.scss';
 
-// import { Button, Col, Divider, Layout, Menu, Row } from 'antd';
 import { Col, Layout, Menu, Row } from 'antd';
-// import React, { useLayoutEffect, useState } from 'react';
 import React from 'react';
 
 import Paths from '../enums/Paths';
 // import Header from '../common/Header';
 // import SideDrawer from '../common/SideDrawer';
-// import AboutMeSection from '../sections/AboutMeSection';
-// import CertificationSection from '../sections/CertificationSection';
+import AboutMeSection from '../sections/AboutMeSection';
+import CertificationSection from '../sections/CertificationSection';
 import ContactSection from '../sections/ContactSection';
+import Experience from '../sections/Experience';
+import ProjectSection from '../sections/ProjectSection';
 
 const { Header, Content, Footer } = Layout
-// import ProjectSection from '../sections/ProjectSection';
 
 const HomePage = () => {
 	// const [visible, setVisible] = useState(false)
@@ -21,56 +20,43 @@ const HomePage = () => {
 	// const openDrawer = () => setVisible(true)
 	// const closeDrawer = () => setVisible(false)
 
-	// const style = { background: '#0092ff', padding: '8px 0' }
-
 	// <>
-	// 	<Header />
-
 	// 	<Button type="primary" onClick={openDrawer}>
 	// 		clicky
 	// 	</Button>
 
 	// 	<SideDrawer open={visible} onClose={closeDrawer} />
-
-	// 	<AboutMeSection />
-
-	// 	<CertificationSection />
-
-	// 	<ProjectSection />
-
-	// 	<ContactSection />
 	// </>
+
+	// xs | xm | md | lg | xl | xxl
+	const widths = { xs: 24, md: 22, xl: 20, xxl: 16 }
+
+	const sections = [<AboutMeSection />, <Experience />, <ProjectSection />, <CertificationSection />, <ContactSection />]
+
 	return (
 		<Layout>
 			<Header>
-				<Menu mode="horizontal">
-					<Menu.Item key={Paths.HOME}>Home</Menu.Item>
-				</Menu>
+				<Row justify="center">
+					<Col {...widths}>
+						<Menu mode="horizontal">
+							<Menu.Item key={Paths.HOME}>Home</Menu.Item>
+						</Menu>
+					</Col>
+				</Row>
 			</Header>
 
-			<Content>
-				content
-				<Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
-					<Col xs={24} style={{ background: '#0092ff', padding: '8px 0' }}>
-						here
-					</Col>
-					{/* <Col className="gutter-row" span={6}>
-						<div style={style}>col-6</div>
-					</Col>
-					<Col className="gutter-row" span={6}>
-						<div style={style}>col-6</div>
-					</Col>
-					<Col className="gutter-row" span={6}>
-						<div style={style}>col-6</div>
-					</Col>
-					<Col className="gutter-row" span={6}>
-						<div style={style}>col-6</div>
-					</Col> */}
-				</Row>
+			<Content className="sections-container">
+				{sections.map((section, index) => (
+					<Row justify="center" key={index}>
+						<Col {...widths}>{section}</Col>
+					</Row>
+				))}
 			</Content>
 
 			<Footer>
-				<ContactSection />
+				<Row justify="center">
+					<Col {...widths}>footer</Col>
+				</Row>
 			</Footer>
 		</Layout>
 	)

@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Routes from './Routes';
 
 function App() {
-	const theme = 'red'
+	const theme = 'dark'
 	const classes = `app ${theme}`
 
 	return (
