@@ -1,0 +1,55 @@
+/**
+ * This file defines the different possible themes for the UI with CSS variables.
+ * CSS variables are different from SASS/SCSS variables because they can be
+ * reassigned, unlike SASS/SCSS variables.  SASS/SCSS variables are better suited
+ * for small-scoped components.
+ */
+
+// Import any colors you'd like to use
+@import './colors';
+@import './material-colors';
+
+// Light theme.  This class will be appended to the body tag in App.tsx
+// .light {
+// 	--background-color: #f4f5f7;
+
+// 	--accent-color-lightest: pink; // TODO
+// 	--accent-color-lighter: pink; // TODO
+// 	--accent-color: $light-blue-400;
+// 	--accent-color-darker: $light-blue-600;
+// 	--accent-color-darkest: pink; // TODO
+// }
+
+// Dark theme.  This class will be appended to the body tag in App.tsx
+.dark {
+	--accent-color-lightest: #{$orange-100};
+	--accent-color-lighter: #{$orange-300};
+	--accent-color: #{$orange-500};
+	--accent-color-darker: #{$orange-700};
+	--accent-color-darkest: #{$orange-900};
+
+	--background-color: #{$blue-gray-900};
+	--background-color-lighter: #{$blue-gray-800};
+}
+
+.red {
+	--accent-color-lightest: red;
+	--accent-color-lighter: red;
+	--accent-color: red;
+	--accent-color-darker: red;
+	--accent-color-darkest: red;
+
+	--background-color: red;
+	--background-color-lighter: red;
+}
+
+// Blue theme.  This class will be appended to the body tag in App.tsx
+// .blue {
+// 	--background-color: #{$blue-color5};
+
+// 	--accent-color-lightest: #{$blue-color1};
+// 	--accent-color-lighter: #{$blue-color2};
+// 	--accent-color: #{$blue-color3};
+// 	--accent-color-darker: #{$blue-color4};
+// 	--accent-color-darkest: #{$blue-color5};
+// }
