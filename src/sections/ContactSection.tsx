@@ -1,4 +1,4 @@
-import { Typography } from 'antd';
+import { Col, Row, Typography } from 'antd';
 import React from 'react';
 
 import ContactForm from '../contact/ContactForm';
@@ -9,17 +9,21 @@ const { Title } = Typography
 
 const ContactMe = () => {
 	return (
-		<>
+		<div>
 			<Typography>
 				<Title>Contact Me</Title>
 			</Typography>
 
-			<ContactForm />
-
-			<ContactInfo />
-
-			<ContactSocialMedia />
-		</>
+			<Row>
+				<Col xs={24} md={6}>
+					<ContactInfo />
+					<ContactSocialMedia />
+				</Col>
+				<Col xs={24} md={18}>
+					<ContactForm />
+				</Col>
+			</Row>
+		</div>
 	)
 }
 

@@ -1,0 +1,18 @@
+$size: 50px;
+
+div.social-media-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: $size;
+	width: $size;
+	line-height: 1rem;
+	padding: 6px;
+	margin-right: 8px;
+	border-radius: 4px;
+	transition: 0.2s;
+	background-color: transparent;
+	&:hover {
+		background-color: var(--background-color-lighter);
+	}
+}

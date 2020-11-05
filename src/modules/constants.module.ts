@@ -8,15 +8,15 @@ const {
 } = process.env
 
 const getContactInformation = () => ({
-	address: REACT_APP_CONTACT_ADDRESS,
-	email: REACT_APP_CONTACT_EMAIL,
-	website: REACT_APP_CONTACT_WEBSITE,
+	address: REACT_APP_CONTACT_ADDRESS || '',
+	email: REACT_APP_CONTACT_EMAIL || '',
+	website: REACT_APP_CONTACT_WEBSITE || '',
 })
 
 const getSocialMediaInformation = () => ({
-	instagramUrl: REACT_APP_SOCIAL_INSTAGRAM,
-	linkedInUrl: REACT_APP_SOCIAL_LINKEDIN,
-	twitterUrl: REACT_APP_SOCIAL_TWITTER,
+	instagramUrl: REACT_APP_SOCIAL_INSTAGRAM || '',
+	linkedInUrl: REACT_APP_SOCIAL_LINKEDIN || '',
+	twitterUrl: REACT_APP_SOCIAL_TWITTER || '',
 })
 
 export {

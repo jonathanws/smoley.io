@@ -1,0 +1,10 @@
+.about-me-section {
+	&.ant-row {
+		.ant-col:nth-child(2) {
+			background-color: teal; // TODO: remove
+			img {
+				min-height: 600px;
+			}
+		}
+	}
+}

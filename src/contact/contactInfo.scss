@@ -1,0 +1,10 @@
+.contact-info {
+	> div {
+		display: flex;
+		align-items: center;
+		padding-bottom: 8px;
+		svg {
+			margin-right: 16px;
+		}
+	}
+}
