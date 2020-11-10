@@ -1,4 +1,10 @@
 .about-me-section {
+	h1.ant-typography {
+		margin-bottom: 10px;
+	}
+	h4.ant-typography {
+		margin-top: 10px;
+	}
 	&.ant-row {
 		.ant-col:nth-child(2) {
 			background-color: teal; // TODO: remove

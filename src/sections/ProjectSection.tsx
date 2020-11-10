@@ -10,7 +10,8 @@ const Projects = () => {
 	return (
 		<div className="project-section padded-section">
 			<Typography>
-				<Title>Projects</Title>
+				<Title level={2}>Projects</Title>
+				<Title level={4}>Click any project to learn more</Title>
 			</Typography>
 
 			<Tabs defaultActiveKey="1" onChange={onTabChange}>

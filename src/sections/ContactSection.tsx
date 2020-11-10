@@ -1,9 +1,9 @@
-import { Col, Row, Typography } from 'antd';
-import React from 'react';
+import { Col, Row, Typography } from 'antd'
+import React from 'react'
 
-import ContactForm from '../contact/ContactForm';
-import ContactInfo from '../contact/ContactInfo';
-import ContactSocialMedia from '../contact/ContactSocialMedia';
+import ContactForm from '../contact/ContactForm'
+import ContactInfo from '../contact/ContactInfo'
+import ContactSocialMedia from '../contact/ContactSocialMedia'
 
 const { Title } = Typography
 
@@ -11,7 +11,7 @@ const ContactMe = () => {
 	return (
 		<div className="padded-section">
 			<Typography>
-				<Title>Contact Me</Title>
+				<Title level={2}>Contact Me</Title>
 			</Typography>
 
 			<Row>

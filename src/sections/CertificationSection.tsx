@@ -1,8 +1,8 @@
-import { Typography } from 'antd';
-import React from 'react';
+import { Typography } from 'antd'
+import React from 'react'
 
-import Certification from '../Certification';
-import awsCloudPractitioner from '../images/aws-cloud-practitioner-badge.png';
+import Certification from '../Certification'
+import awsCloudPractitioner from '../images/aws-cloud-practitioner-badge.png'
 
 const { Title } = Typography
 
@@ -18,7 +18,7 @@ const CertificationSection = () => {
 	return (
 		<div className="padded-section">
 			<Typography>
-				<Title>Certifications</Title>
+				<Title level={2}>Certifications</Title>
 			</Typography>
 
 			<div>
