@@ -1,0 +1,43 @@
+// Boundary strings
+$xs-and-up: xs;
+$sm-and-up: sm;
+$md-and-up: md;
+$lg-and-up: lg;
+$xl-and-up: xl;
+$xxl-and-up: xxl;
+
+@mixin ant-size($range) {
+	// Boundary sizes:	https://ant.design/components/layout/
+	$xs-boundary: '0px'; // '480px';
+	$sm-boundary: '576px';
+	$md-boundary: '768px';
+	$lg-boundary: '992px';
+	$xl-boundary: '1200px';
+	$xxl-boundary: '1600px';
+
+	@if $range == $xs-and-up {
+		@media (min-width: $xs-boundary) {
+			@content;
+		}
+	} @else if $range == $sm-and-up {
+		@media (min-width: $sm-boundary) {
+			@content;
+		}
+	} @else if $range == $md-and-up {
+		@media (min-width: $md-boundary) {
+			@content;
+		}
+	} @else if $range == $lg-and-up {
+		@media (min-width: $lg-boundary) {
+			@content;
+		}
+	} @else if $range == $xl-and-up {
+		@media (min-width: $xl-boundary) {
+			@content;
+		}
+	} @else if $range == $xxl-and-up {
+		@media (min-width: $xxl-boundary) {
+			@content;
+		}
+	}
+}

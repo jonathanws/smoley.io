@@ -18,7 +18,7 @@ const jobs = [
 
 const Experience = () => {
 	return (
-		<div>
+		<div className="padded-section">
 			<Typography>
 				<Title>Experience</Title>
 			</Typography>

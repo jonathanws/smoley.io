@@ -37,3 +37,20 @@ ul.ant-menu {
 		@include content-column;
 	}
 }
+
+// Create a colored underline on section titles
+.padded-section > article:nth-child(1) > h2.ant-typography {
+	position: relative;
+	padding-bottom: 20px;
+	&::before {
+		content: "";
+		position: absolute;
+		background: var(--accent-color);
+		height: 4px;
+		width: 100px;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		margin: 0 auto;
+	}
+}

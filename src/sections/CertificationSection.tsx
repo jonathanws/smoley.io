@@ -16,7 +16,7 @@ const certs = [
 
 const CertificationSection = () => {
 	return (
-		<div>
+		<div className="padded-section">
 			<Typography>
 				<Title>Certifications</Title>
 			</Typography>

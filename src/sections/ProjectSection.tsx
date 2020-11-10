@@ -8,7 +8,7 @@ const Projects = () => {
 	const onTabChange = (e: any) => console.log(e)
 
 	return (
-		<div>
+		<div className="project-section padded-section">
 			<Typography>
 				<Title>Projects</Title>
 			</Typography>

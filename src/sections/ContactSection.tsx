@@ -9,7 +9,7 @@ const { Title } = Typography
 
 const ContactMe = () => {
 	return (
-		<div>
+		<div className="padded-section">
 			<Typography>
 				<Title>Contact Me</Title>
 			</Typography>

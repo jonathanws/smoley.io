@@ -40,3 +40,19 @@ svg.icon-tabler {
 	width: $size;
 	height: $size;
 }
+
+// Add a padding to every section on mobile (xs, sm), but nowhere else (md or higher)
+.padded-section {
+	padding: 16px;
+}
+@include ant-size(md) {
+	.padded-section {
+		padding: 120px 0;
+	}
+}
+
+.padded-section article.ant-typography {
+	> h2, div {
+		text-align: center;
+	}
+}
