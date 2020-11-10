@@ -28,13 +28,16 @@
 	--accent-color-darker: #{$orange-700};
 	--accent-color-darkest: #{$orange-900};
 
-	--background-color: #{$blue-gray-900};
-	--background-color-lighter: #{$blue-gray-800};
+	--background-color-lighter: #{$blue-gray-700};
+	--background-color: #{$blue-gray-800};
+	--background-color-darker: #{$blue-gray-900};
 
 	--font-color: white;
 	--font-color-1: #cccccc;
 	--font-color-2: #9f9f9f;
 	--font-color-3: #747474;
+
+	--error-color: #{$red-500};
 }
 
 .red {

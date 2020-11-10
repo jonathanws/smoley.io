@@ -1,5 +1,8 @@
-import { Tabs, Typography } from 'antd';
-import React from 'react';
+import { Col, Row, Tabs, Typography } from 'antd'
+import React from 'react'
+
+import ImgReferee from '../images/project-referee.png'
+import Project from '../Project'
 
 const { Title } = Typography
 const { TabPane } = Tabs
@@ -7,12 +10,32 @@ const { TabPane } = Tabs
 const Projects = () => {
 	const onTabChange = (e: any) => console.log(e)
 
+	const projects = [
+		// 'mne1',
+		// 'mne2',
+		// 'website',
+		{
+			title: 'Referee',
+			mainImg: ImgReferee,
+		},
+	]
+
+	const widths = { xs: 12, md: 6 }
+
 	return (
 		<div className="project-section padded-section">
 			<Typography>
 				<Title level={2}>Projects</Title>
 				<Title level={4}>Click any project to learn more</Title>
 			</Typography>
+
+			<Row gutter={24}>
+				{projects.map(({ mainImg, title }) => (
+					<Col {...widths}>
+						<Project title={title} mainImg={mainImg} />
+					</Col>
+				))}
+			</Row>
 
 			<Tabs defaultActiveKey="1" onChange={onTabChange}>
 				<TabPane tab="Tab 1" key="1">

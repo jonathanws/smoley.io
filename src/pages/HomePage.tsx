@@ -1,16 +1,14 @@
-import './homePage.scss';
+import './homePage.scss'
 
-import { Col, Layout, Menu, Row } from 'antd';
-import React from 'react';
+import { Col, Layout, Menu, Row } from 'antd'
+import React, { useState } from 'react'
 
-import Paths from '../enums/Paths';
-// import Header from '../common/Header';
-// import SideDrawer from '../common/SideDrawer';
-import AboutMeSection from '../sections/AboutMeSection';
-import CertificationSection from '../sections/CertificationSection';
-import ContactSection from '../sections/ContactSection';
-import Experience from '../sections/Experience';
-import ProjectSection from '../sections/ProjectSection';
+import Paths from '../enums/Paths'
+import AboutMeSection from '../sections/AboutMeSection'
+import CertificationSection from '../sections/CertificationSection'
+import ContactSection from '../sections/ContactSection'
+import Experience from '../sections/Experience'
+import ProjectSection from '../sections/ProjectSection'
 
 const { Header, Content, Footer } = Layout
 
@@ -33,14 +31,19 @@ const HomePage = () => {
 
 	const sections = [<AboutMeSection />, <Experience />, <ProjectSection />, <CertificationSection />, <ContactSection />]
 
+	const [shadowClass, setShadowClass] = useState(false)
+	window.addEventListener('scroll', () => setShadowClass((window.scrollY !== 0) as boolean))
+
 	return (
-		<Layout>
-			<Header>
+		<Layout className="home-page">
+			<Header className={shadowClass ? 'scroll-shadow' : ''}>
 				<Row justify="center">
 					<Col {...widths}>
-						<Menu mode="horizontal">
-							<Menu.Item key={Paths.HOME}>Home</Menu.Item>
-						</Menu>
+						<div className="header-container">
+							<Menu mode="horizontal">
+								<Menu.Item key={Paths.HOME}>Home</Menu.Item>
+							</Menu>
+						</div>
 					</Col>
 				</Row>
 			</Header>
