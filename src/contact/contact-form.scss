@@ -1,0 +1,16 @@
+@import '../styles/ant-screen-sizes';
+
+.contact-form {
+	padding: 16px;
+	input, textarea {
+		padding: 16px;
+		border: 0;
+		background-color: var(--background-color-lighter);
+	}
+}
+
+@include ant-size(sm) {
+	.contact-form {
+		padding: 0;
+	}
+}

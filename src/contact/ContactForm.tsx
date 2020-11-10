@@ -1,5 +1,7 @@
-import { Button, Form, Input } from 'antd';
-import React from 'react';
+import './contact-form.scss'
+
+import { Button, Col, Form, Input, Row } from 'antd'
+import React from 'react'
 
 const { TextArea } = Input
 
@@ -14,18 +16,23 @@ const ContactForm = () => {
 	}
 
 	return (
-		<Form name="contact" initialValues={{ remember: true }} onFinish={onFinish} onFinishFailed={onFinishFailed}>
+		<Form className="contact-form" name="contact" initialValues={{ remember: true }} layout="vertical" onFinish={onFinish} onFinishFailed={onFinishFailed}>
 			<Form.Item label="Name" name="Name" rules={rules.name}>
 				<Input />
 			</Form.Item>
 
-			<Form.Item label="Phone Number" name="phone">
-				<Input />
-			</Form.Item>
-
-			<Form.Item label="Email" name="email" rules={rules.email}>
-				<Input />
-			</Form.Item>
+			<Row gutter={24}>
+				<Col xs={24} md={12}>
+					<Form.Item label="Email" name="email" rules={rules.email}>
+						<Input />
+					</Form.Item>
+				</Col>
+				<Col xs={24} md={12}>
+					<Form.Item label="Phone Number" name="phone">
+						<Input />
+					</Form.Item>
+				</Col>
+			</Row>
 
 			<Form.Item label="Message" name="message" rules={rules.message}>
 				<TextArea rows={4} />
