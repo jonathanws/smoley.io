@@ -1,0 +1,97 @@
+@import './styles/ant-screen-sizes';
+
+$transition-duration: 0.3s;
+
+// Turn off the links for mobile devices
+.ant-anchor-wrapper {
+	display: none;
+}
+@include ant-size(sm) {
+	.ant-anchor-wrapper {
+		display: block;
+	}
+}
+
+.header-column {
+	display: flex;
+	align-items: center;
+	svg {
+		cursor: pointer;
+	}
+	.separator {
+		flex-grow: 1;
+	}
+}
+
+.ant-anchor-wrapper {
+	background: transparent;
+	margin: 0;
+	padding: 0;
+	.ant-anchor-ink {
+		display: none;
+	}
+
+	.ant-anchor {
+		display: flex;
+	}
+	.ant-anchor-link {
+		transition: $transition-duration;
+		margin: 16px;
+		padding: 16px 0;
+		position: relative;
+		a {
+			font-weight: 500;
+			color: var(--font-color);
+		}
+		&:hover {
+			cursor: pointer;
+			a {
+				color: var(--accent-color);
+			}
+		}
+		&::before {
+			content: "";
+				position: absolute;
+				width: 0;
+				transition: $transition-duration;
+		}
+		&.ant-anchor-link-active {
+			transition: $transition-duration;
+			a {
+				color: var(--accent-color);
+			}
+
+			&::before {
+				content: "";
+				position: absolute;
+				background: var(--accent-color);
+				height: 4px;
+				width: 40px;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				transition: $transition-duration;
+			}
+		}
+	}
+}
+
+.ant-layout-header {
+	// Create a fixed header
+	background-color: var(--background-color);
+	padding: 12px 0;
+	height: unset;
+	position: fixed;
+	z-index: 1;
+	width: 100%;
+	transition: 0.3s;
+	ul.ant-menu {
+		border-bottom: 0;
+		background-color: transparent;
+	}
+	&.scroll-shadow {
+		box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
+		background-color: var(--background-color-darker);
+		transition: 0.3s;
+	}
+}

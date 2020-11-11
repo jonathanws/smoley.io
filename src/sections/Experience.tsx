@@ -3,6 +3,7 @@ import './experience.scss'
 import { Card, Col, Row, Typography } from 'antd'
 import React from 'react'
 
+import SectionProps from '../common/Types'
 import amazonWebServices from '../images/experience-aws.svg'
 import freedomConsultingGroup from '../images/experience-freedom.svg'
 import towsonUniversity from '../images/experience-towson.svg'
@@ -36,10 +37,9 @@ const jobs = [
 		description: '',
 	},
 ]
-
-const Experience = () => {
+const Experience = ({ id }: SectionProps) => {
 	return (
-		<div className="padded-section">
+		<div id={id} className="padded-section">
 			<Typography>
 				<Title level={2}>Experience</Title>
 				<Paragraph>Some subtitle stuff</Paragraph>

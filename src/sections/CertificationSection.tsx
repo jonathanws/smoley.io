@@ -2,6 +2,7 @@ import { Typography } from 'antd'
 import React from 'react'
 
 import Certification from '../Certification'
+import SectionProps from '../common/Types'
 import awsCloudPractitioner from '../images/aws-cloud-practitioner-badge.png'
 
 const { Title } = Typography
@@ -13,10 +14,9 @@ const certs = [
 		img: awsCloudPractitioner,
 	},
 ]
-
-const CertificationSection = () => {
+const CertificationSection = ({ id }: SectionProps) => {
 	return (
-		<div className="padded-section">
+		<div id={id} className="padded-section">
 			<Typography>
 				<Title level={2}>Certifications</Title>
 			</Typography>

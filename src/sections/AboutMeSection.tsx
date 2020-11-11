@@ -1,16 +1,18 @@
-import './aboutMeSection.scss'
+import './aboutMeSection.scss';
 
-import { Button, Col, Row, Typography } from 'antd'
-import React from 'react'
+import { Button, Col, Row, Typography } from 'antd';
+import React from 'react';
+
+import SectionProps from '../common/Types';
 
 const { Title } = Typography
 
-const AboutMeSection = () => {
+const AboutMeSection = ({ id }: SectionProps) => {
 	return (
-		<Row align="middle" className="about-me-section padded-section">
+		<Row id={id} align="middle" className="about-me-section padded-section">
 			<Col xs={24} md={10}>
 				<Title>Name's Jon</Title>
-				<Title level={4}>Full-Stack Engineer</Title>
+				<Title level={4}>Full-Stack Engineer with Cloud and Serverless expertise</Title>
 				<Button type="primary" size="large">
 					Hire me
 				</Button>

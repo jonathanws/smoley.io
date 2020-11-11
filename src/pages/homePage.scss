@@ -1,82 +1,10 @@
-@import '../styles/_global-constants.scss';
-
-@mixin content-column {
-	max-width: 1200px;
-}
-
-.home-page {
-	.header-container {
-		display: flex;
-		align-items: center;
-		:first-child {
-			flex-grow: 1;
-		}
-	}
-	.scroll-shadow.ant-layout-header {
-		box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.5);
-		background-color: var(--background-color-darker);
-		transition: 0.3s;
-	}
-	.sections-container {
-		> * {
-			&:nth-child(even) {
-				background-color: var(--background-color-lighter);
-				> .ant-col {
-					@include content-column;
-				}
-			}
-			&:nth-child(odd) {
-				background-color: var(--background-color);
-				> .ant-col {
-					@include content-column;
-				}
-			}
-		}
-	}
-	.ant-layout-header {
-		// Create a fixed header
-		background-color: var(--background-color);
-		padding: 12px 0;
-		height: unset;
-		position: fixed;
-		z-index: 1;
-		width: 100%;
-		transition: 0.3s;
-
-		ul.ant-menu {
-			border-bottom: 0;
-			background-color: transparent;
-		}
-	}
-	.ant-layout-content {
-		margin-top: 64px; // TODO
-	}
-	.ant-layout-footer {
-		border-top: 2px solid var(--background-color-lighter);
-		background-color: var(--background-color);
-	}
-}
+@import '../styles/mixins';
 
 .ant-layout-header > *,
+.ant-layout-content > *,
 .ant-layout-footer > * {
-	.ant-col {
+	> .ant-col {
 		@include content-column;
 	}
 }
 
-// Create a colored underline on section titles
-.padded-section > article:nth-child(1) > h2.ant-typography {
-	position: relative;
-	padding-bottom: 20px;
-	&::before {
-		content: "";
-		position: absolute;
-		background: var(--accent-color);
-		height: 4px;
-		width: 100px;
-		bottom: 0;
-		right: 0;
-		left: 0;
-		margin: 0 auto;
-	}
-}

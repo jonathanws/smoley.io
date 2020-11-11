@@ -1,13 +1,14 @@
 import { Col, Row, Tabs, Typography } from 'antd'
 import React from 'react'
 
+import SectionProps from '../common/Types'
 import ImgReferee from '../images/project-referee.png'
 import Project from '../Project'
 
 const { Title } = Typography
 const { TabPane } = Tabs
 
-const Projects = () => {
+const Projects = ({ id }: SectionProps) => {
 	const onTabChange = (e: any) => console.log(e)
 
 	const projects = [
@@ -23,7 +24,7 @@ const Projects = () => {
 	const widths = { xs: 12, md: 6 }
 
 	return (
-		<div className="project-section padded-section">
+		<div id={id} className="project-section padded-section">
 			<Typography>
 				<Title level={2}>Projects</Title>
 				<Title level={4}>Click any project to learn more</Title>

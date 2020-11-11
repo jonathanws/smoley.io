@@ -4,10 +4,11 @@
 	}
 	h4.ant-typography {
 		margin-top: 10px;
+		margin-bottom: 40px;
 	}
 	&.ant-row {
 		.ant-col:nth-child(2) {
-			background-color: teal; // TODO: remove
+			background-color: var(--background-color-darker); // TODO: remove once you have a picture
 			img {
 				min-height: 600px;
 			}

@@ -1,66 +1,66 @@
-import './homePage.scss'
+import './homePage.scss';
 
-import { Col, Layout, Menu, Row } from 'antd'
-import React, { useState } from 'react'
+import { Layout } from 'antd';
+import React from 'react';
 
-import Paths from '../enums/Paths'
-import AboutMeSection from '../sections/AboutMeSection'
-import CertificationSection from '../sections/CertificationSection'
-import ContactSection from '../sections/ContactSection'
-import Experience from '../sections/Experience'
-import ProjectSection from '../sections/ProjectSection'
+import HomePageContent, { HomePageContentSection } from '../HomePageContent';
+import HomePageFooter from '../HomePageFooter';
+import HomePageHeader from '../HomePageHeader';
+import AboutMeSection from '../sections/AboutMeSection';
+import CertificationSection from '../sections/CertificationSection';
+import ContactSection from '../sections/ContactSection';
+import Experience from '../sections/Experience';
+import ProjectSection from '../sections/ProjectSection';
 
-const { Header, Content, Footer } = Layout
+// xs | xm | md | lg | xl | xxl
+export const columnWidths = { xs: 24, md: 22, xl: 20, xxl: 16 }
 
 const HomePage = () => {
-	// const [visible, setVisible] = useState(false)
+	const getId = (name: string) => `${name}-section`
 
-	// const openDrawer = () => setVisible(true)
-	// const closeDrawer = () => setVisible(false)
+	const aboutMeId = getId('about')
+	const experienceId = getId('experience')
+	const projectId = getId('project')
+	const certificationId = getId('certification')
+	const contactId = getId('contact')
 
-	// <>
-	// 	<Button type="primary" onClick={openDrawer}>
-	// 		clicky
-	// 	</Button>
+	const sections: HomePageContentSection[] = [
+		{
+			anchor: aboutMeId,
+			section: <AboutMeSection id={aboutMeId} />,
+			title: 'About Me',
+		},
+		{
+			anchor: experienceId,
+			section: <Experience id={experienceId} />,
+			title: 'Experience',
+		},
+		{
+			anchor: projectId,
+			section: <ProjectSection id={projectId} />,
+			title: 'Projects',
+		},
+		{
+			anchor: certificationId,
+			section: <CertificationSection id={certificationId} />,
+			title: 'Certifications',
+		},
+		{
+			anchor: contactId,
+			section: <ContactSection id={contactId} />,
+			title: 'Contact',
+		},
+	]
 
-	// 	<SideDrawer open={visible} onClose={closeDrawer} />
-	// </>
-
-	// xs | xm | md | lg | xl | xxl
-	const widths = { xs: 24, md: 22, xl: 20, xxl: 16 }
-
-	const sections = [<AboutMeSection />, <Experience />, <ProjectSection />, <CertificationSection />, <ContactSection />]
-
-	const [shadowClass, setShadowClass] = useState(false)
-	window.addEventListener('scroll', () => setShadowClass((window.scrollY !== 0) as boolean))
+	const links = sections.map(({ anchor, title }) => ({ anchor, title }))
 
 	return (
 		<Layout className="home-page">
-			<Header className={shadowClass ? 'scroll-shadow' : ''}>
-				<Row justify="center">
-					<Col {...widths}>
-						<div className="header-container">
-							<Menu mode="horizontal">
-								<Menu.Item key={Paths.HOME}>Home</Menu.Item>
-							</Menu>
-						</div>
-					</Col>
-				</Row>
-			</Header>
+			<HomePageHeader links={links} />
 
-			<Content className="sections-container">
-				{sections.map((section, index) => (
-					<Row justify="center" key={index}>
-						<Col {...widths}>{section}</Col>
-					</Row>
-				))}
-			</Content>
+			<HomePageContent sections={sections} />
 
-			<Footer>
-				<Row justify="center">
-					<Col {...widths}>footer</Col>
-				</Row>
-			</Footer>
+			<HomePageFooter />
 		</Layout>
 	)
 }

@@ -67,14 +67,20 @@ h2.ant-typography {
 	}
 }
 
-// Tabler icons.  (These are svg styles)
-svg.icon-tabler {
-	$size: 24px;
+svg {
+	// Tabler icons.  (These are svg styles)
+	.icon-tabler {
+		$size: 24px;
 
-	stroke: var(--font-color-2);
-	stroke-width: 1.5;
-	width: $size;
-	height: $size;
+		stroke: var(--font-color-2);
+		stroke-width: 1.5;
+		width: $size;
+		height: $size;
+	}
+	// Main logo in the header
+	#logo-j, #logo-dot {
+		fill: var(--accent-color);
+	}
 }
 
 // Add a padding to every section on mobile (xs, sm), but nowhere else (md or higher)
@@ -87,8 +93,27 @@ svg.icon-tabler {
 	}
 }
 
-.padded-section article.ant-typography {
-	> h2, div {
-		text-align: center;
+.padded-section {
+	article.ant-typography {
+		> h2, div {
+			text-align: center;
+		}
+	}
+	
+	// Create a colored underline on section titles
+	> article:nth-child(1) > h2.ant-typography {
+		position: relative;
+		padding-bottom: 20px;
+		&::before {
+			content: "";
+			position: absolute;
+			background: var(--accent-color);
+			height: 4px;
+			width: 100px;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			margin: 0 auto;
+		}
 	}
 }
