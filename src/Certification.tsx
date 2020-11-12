@@ -14,10 +14,8 @@ const Certification = ({ title, date, img, url }: CertificationProps) => {
 		<div>
 			<img src={img} alt={title} />
 
-			<Typography>
-				<Title level={3}>{title}</Title>
-				<Text>{date}</Text>
-			</Typography>
+			<Title level={3}>{title}</Title>
+			<Text>{date}</Text>
 		</div>
 	)
 }

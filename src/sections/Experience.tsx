@@ -1,12 +1,12 @@
-import './experience.scss'
+import './experience.scss';
 
-import { Card, Col, Row, Typography } from 'antd'
-import React from 'react'
+import { Card, Col, Row, Typography } from 'antd';
+import React from 'react';
 
-import SectionProps from '../common/Types'
-import amazonWebServices from '../images/experience-aws.svg'
-import freedomConsultingGroup from '../images/experience-freedom.svg'
-import towsonUniversity from '../images/experience-towson.svg'
+import SectionProps from '../common/Types';
+import amazonWebServices from '../images/experience-aws.svg';
+import freedomConsultingGroup from '../images/experience-freedom.svg';
+import towsonUniversity from '../images/experience-towson.svg';
 
 const { Title, Paragraph, Text } = Typography
 const { Meta } = Card
@@ -40,10 +40,8 @@ const jobs = [
 const Experience = ({ id }: SectionProps) => {
 	return (
 		<div id={id} className="padded-section">
-			<Typography>
-				<Title level={2}>Experience</Title>
-				<Paragraph>Some subtitle stuff</Paragraph>
-			</Typography>
+			<Title level={2}>Experience</Title>
+			<Title level={4}>Some subtitle stuff</Title>
 
 			<Row>
 				{jobs.map(({ company, description, logo, title }, index) => {

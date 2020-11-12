@@ -22,6 +22,18 @@ h2.ant-typography {
 	font-size: 45px;
 }
 
+// Hyperlinks
+a.ant-typography {
+	color: var(--accent-color);
+	font-weight: 600;
+	&:hover {
+		color: var(--accent-color-lighter);
+	}
+	&:focus {
+		color: var(--accent-color-darker);
+	}
+}
+
 // Forms
 .ant-form-item-label > label{
 	color: var(--font-color-2);
@@ -65,18 +77,15 @@ h2.ant-typography {
 		font-size: 20px;
 		padding: 30px 70px;
 	}
+	&.ant-btn-background-ghost {
+		color: var(--accent-color);
+		&:hover {
+			color: var(--accent-color-lighter);
+		}
+	}
 }
 
 svg {
-	// Tabler icons.  (These are svg styles)
-	.icon-tabler {
-		$size: 24px;
-
-		stroke: var(--font-color-2);
-		stroke-width: 1.5;
-		width: $size;
-		height: $size;
-	}
 	// Main logo in the header
 	#logo-j, #logo-dot {
 		fill: var(--accent-color);
@@ -94,14 +103,12 @@ svg {
 }
 
 .padded-section {
-	article.ant-typography {
-		> h2, div {
-			text-align: center;
-		}
+	> h2.ant-typography, h4.ant-typography {
+		text-align: center;
 	}
 	
 	// Create a colored underline on section titles
-	> article:nth-child(1) > h2.ant-typography {
+	> h2.ant-typography {
 		position: relative;
 		padding-bottom: 20px;
 		&::before {

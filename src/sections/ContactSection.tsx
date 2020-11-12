@@ -1,21 +1,35 @@
-import { Col, Row, Typography } from 'antd'
-import React from 'react'
+import './contactSection.scss';
 
-import SectionProps from '../common/Types'
-import ContactForm from '../contact/ContactForm'
-import ContactInfo from '../contact/ContactInfo'
-import ContactSocialMedia from '../contact/ContactSocialMedia'
+import { Col, Row, Typography } from 'antd';
+import React from 'react';
+
+import SectionProps from '../common/Types';
+import ContactForm from '../contact/ContactForm';
+import ContactInfo from '../contact/ContactInfo';
+import ContactSocialMedia from '../contact/ContactSocialMedia';
 
 const { Title } = Typography
 
 const ContactMe = ({ id }: SectionProps) => {
 	return (
-		<div id={id} className="padded-section">
-			<Typography>
-				<Title level={2}>Contact Me</Title>
-			</Typography>
+		<div id={id} className="contact-section padded-section">
+			<Title level={2}>Contact Me</Title>
 
-			<Row>
+			{/* Display for mobile */}
+			<Row className="mobile">
+				<Col xs={24}>
+					<ContactSocialMedia />
+				</Col>
+				<Col xs={24}>
+					<ContactForm />
+				</Col>
+				<Col xs={24}>
+					<ContactInfo />
+				</Col>
+			</Row>
+
+			{/* Display for desktop (md and above) */}
+			<Row className="desktop">
 				<Col xs={24} md={6}>
 					<ContactInfo />
 					<ContactSocialMedia />

@@ -1,5 +1,18 @@
+@import '../styles/ant-screen-sizes';
+
 .contact-social-media {
-	display: flex;
-	justify-content: space-evenly;
-	margin-top: 16px;
+	// Don't display the title on mobile
+	h3.ant-typography {
+		display: none;
+	}
+	@include ant-size(md) {
+		h3.ant-typography {
+			display: block;
+		}
+	}
+
+	.buttons {
+		display: flex;
+		justify-content: space-evenly;
+	}
 }

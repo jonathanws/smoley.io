@@ -1,0 +1,19 @@
+@import '../styles/ant-screen-sizes';
+
+.contact-section {
+	.mobile {
+		display: flex;
+	}
+	.desktop {
+		display: none
+	}
+
+	@include ant-size(md) {
+		.mobile {
+			display: none;
+		}
+		.desktop {
+			display: flex;
+		}
+	}
+}

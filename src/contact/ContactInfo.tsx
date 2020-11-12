@@ -1,12 +1,12 @@
-import './contactInfo.scss'
+import './contactInfo.scss';
 
-import { Typography } from 'antd'
-import React from 'react'
+import { Typography } from 'antd';
+import React from 'react';
 
-import HomeIcon from '../images/icons/HomeIcon'
-import MailIcon from '../images/icons/MailIcon'
-import WorldIcon from '../images/icons/WorldIcon'
-import { getContactInformation } from '../modules/constants.module'
+import { faEnvelope, faGlobeAmericas, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import { getContactInformation } from '../modules/constants.module';
 
 const { Text, Title } = Typography
 
@@ -15,20 +15,18 @@ const ContactInfo = () => {
 
 	return (
 		<div className="contact-info">
-			<Typography>
-				<Title level={3}>Contact Info</Title>
-			</Typography>
+			<Title level={3}>Contact Info</Title>
 
 			<div>
-				<HomeIcon />
+				<FontAwesomeIcon icon={faMapMarkerAlt} />
 				<Text>{address}</Text>
 			</div>
 			<div>
-				<MailIcon />
+				<FontAwesomeIcon icon={faEnvelope} />
 				<Text>{email}</Text>
 			</div>
 			<div>
-				<WorldIcon />
+				<FontAwesomeIcon icon={faGlobeAmericas} />
 				<Text>{website}</Text>
 			</div>
 		</div>

@@ -1,18 +1,21 @@
-import './socialMediaButton.scss'
+import './socialMediaButton.scss';
 
-import React from 'react'
+import React from 'react';
 
-type SocialMediaButtonProps = {
+import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+export type SocialMediaButtonProps = {
 	title: string
 	url: string
-	icon: React.ReactNode
+	icon: IconProp
 }
 
 const SocialMediaButton = ({ title, url, icon }: SocialMediaButtonProps) => {
 	return (
 		<div className="social-media-button">
 			<a href={url} title={title} target="_blank" rel="noreferrer">
-				{icon}
+				<FontAwesomeIcon icon={icon} />
 			</a>
 		</div>
 	)

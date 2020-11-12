@@ -1,50 +1,50 @@
-import { Space } from 'antd'
-import React from 'react'
+import './contactSocialMedia.scss';
 
-import InstagramIcon from '../images/icons/InstagramIcon'
-import LinkedInIcon from '../images/icons/LinkedInIcon'
-import TwitterIcon from '../images/icons/TwitterIcon'
-import { getSocialMediaInformation } from '../modules/constants.module'
-import SocialMediaButton from './SocialMediaButton'
+import { Typography } from 'antd';
+import React from 'react';
+
+import { faGithub, faInstagram, faLinkedinIn, faTwitter } from '@fortawesome/free-brands-svg-icons';
+
+import { getSocialMediaInformation } from '../modules/constants.module';
+import SocialMediaButton, { SocialMediaButtonProps } from './SocialMediaButton';
+
+const { Title } = Typography
 
 const ContactSocialMedia = () => {
-	type Account = {
-		key: string
-		title: string
-		url: string
-		icon: React.ReactNode
-	}
-
 	const { instagramUrl, linkedInUrl, twitterUrl } = getSocialMediaInformation()
 
-	const accounts: Account[] = [
+	const accounts: SocialMediaButtonProps[] = [
 		{
-			key: 'instagram',
 			title: 'Instagram: @smoleypoleyoley',
 			url: instagramUrl,
-			icon: <InstagramIcon />,
+			icon: faInstagram,
 		},
 		{
-			key: 'twitter',
 			title: 'Twitter: @SmoleyPoleyOley',
 			url: twitterUrl,
-			icon: <TwitterIcon />,
+			icon: faTwitter,
 		},
 		{
-			key: 'linkedin',
 			title: 'LinkedIn: Jon Smoley',
 			url: linkedInUrl,
-			icon: <LinkedInIcon />,
+			icon: faLinkedinIn,
+		},
+		{
+			title: 'Github: jonathanws',
+			url: 'https://github.com/jonathanws',
+			icon: faGithub,
 		},
 	]
 
 	return (
 		<div className="contact-social-media">
-			<Space size="small">
-				{accounts.map(({ title, url, icon }) => (
-					<SocialMediaButton title={title} url={url} icon={icon} />
+			<Title level={3}>Follow Me</Title>
+
+			<div className="buttons">
+				{accounts.map(({ title, url, icon }, index) => (
+					<SocialMediaButton title={title} url={url} icon={icon} key={index} />
 				))}
-			</Space>
+			</div>
 		</div>
 	)
 }

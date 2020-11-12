@@ -30,7 +30,7 @@ const HomePageHeader = ({ links }: HeaderProps) => {
 					<div className="separator" />
 					<Anchor>
 						{links.map(({ anchor, title }) => (
-							<Link href={`#${anchor}`} title={title} />
+							<Link href={`#${anchor}`} title={title} key={anchor} />
 						))}
 					</Anchor>
 				</Col>

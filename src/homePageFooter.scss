@@ -1,4 +1,17 @@
 .ant-layout-footer {
 	border-top: 2px solid var(--background-color-lighter);
 	background-color: var(--background-color);
+	a.ant-typography {
+		display: inline-flex;
+		align-items: center;
+	}
+	svg.svg-inline--fa.fa-w-16 {
+		$size: 1.5em;
+		height: $size;
+		width: $size;
+		margin-right: 10px;
+	}
+	.ant-col {
+		text-align: center;
+	}
 }

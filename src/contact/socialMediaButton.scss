@@ -15,4 +15,10 @@ div.social-media-button {
 	&:hover {
 		background-color: var(--background-color-lighter);
 	}
+	svg.svg-inline--fa {
+		$size: 1.5em;
+		height: $size;
+		width: $size;
+		color: var(--font-color-1);
+	}
 }

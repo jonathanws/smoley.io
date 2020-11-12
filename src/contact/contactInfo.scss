@@ -5,6 +5,12 @@
 		padding-bottom: 8px;
 		svg {
 			margin-right: 16px;
+			&.svg-inline--fa {
+				$size: 1.5em;
+				height: $size;
+				width: $size;
+				color: var(--font-color-1);
+			}
 		}
 	}
 }
