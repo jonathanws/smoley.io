@@ -1,7 +1,7 @@
-import { SET_THEME, THEME_DARK, ThemeActionTypes, ThemeState } from './types';
+import { SET_THEME, THEME_DARK_ORANGE, ThemeActionTypes, ThemeState } from './types';
 
 const initialState: ThemeState = {
-	theme: THEME_DARK
+	theme: THEME_DARK_ORANGE
 }
 
 export const themeReducer = (state = initialState, { payload, type }: ThemeActionTypes): ThemeState => {

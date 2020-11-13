@@ -1,6 +1,6 @@
 .theme-switcher {
-	$move: 4px;
 	.circle {
+		$move: 4px;
 		$size: 50px;
 		height: $size;
 		width: $size;
@@ -20,12 +20,37 @@
 		}
 	}
 
-	.dark-colors{
-		border-color: #ff9800;
+	// Dark styles
+
+	@mixin dark($property) {
 		background-color: #1e1e1e;
+		border-color: $property;
 	}
-	.light-colors {
-		border-color: red;
-		background-color: red;
+
+	.dark-orange {
+		@include dark(#ff9800);
+	}
+	.dark-green {
+		@include dark(#8bc34a);
+	}
+	.dark-cyan {
+		@include dark(#00bcd4);
+	}
+
+	// Light styles
+
+	@mixin light($property) {
+		background-color: #ffffff;
+		border-color: $property;
+	}
+	
+	.light-purple {
+		@include light(#9c27b0);
+	}
+	.light-orange {
+		@include light(#ff9800);
+	}
+	.light-cyan {
+		@include light(#00bcd4);
 	}
 }
