@@ -1,0 +1,31 @@
+.theme-switcher {
+	$move: 4px;
+	.circle {
+		$size: 50px;
+		height: $size;
+		width: $size;
+		border-width: 6px;
+		border-style: solid;
+		border-radius: 50%;
+		box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2),
+					0 1px 1px 0 rgba(0, 0, 0, 0.14),
+					0 1px 3px 0 rgba(0,0,0,.12);
+		cursor: pointer;
+
+		margin-top: $move;
+		transition: 0.3s;
+		&:hover {
+			margin-top: 0;
+			margin-bottom: $move;
+		}
+	}
+
+	.dark-colors{
+		border-color: #ff9800;
+		background-color: #1e1e1e;
+	}
+	.light-colors {
+		border-color: red;
+		background-color: red;
+	}
+}

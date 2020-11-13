@@ -4,6 +4,7 @@ import { Button, Col, Row, Space, Typography } from 'antd';
 import React from 'react';
 
 import SectionProps from '../common/Types';
+import ThemeSwitcher from '../ThemeSwitcher';
 
 const { Title } = Typography
 
