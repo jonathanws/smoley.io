@@ -26,6 +26,9 @@ const AboutMeSection = ({ id }: SectionProps) => {
 			<Col xs={24} md={14}>
 				<img src="" alt="One handsome guy" />
 			</Col>
+			<Col xs={24}>
+				<ThemeSwitcher />
+			</Col>
 		</Row>
 	)
 }
