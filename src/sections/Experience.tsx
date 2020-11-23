@@ -1,40 +1,47 @@
-import './experience.scss';
+import { Col, Row, Typography } from 'antd'
+import React from 'react'
 
-import { Card, Col, Row, Typography } from 'antd';
-import React from 'react';
+import SectionProps from '../common/Types'
+import amazonWebServicesLogo from '../images/experience/logos/aws.svg'
+import freedomConsultingGroupLogo from '../images/experience/logos/freedom.svg'
+import libertyMountainRacingTeamLogo from '../images/experience/logos/lmrt.svg'
+import towsonUniversityLogo from '../images/experience/logos/towson.svg'
+import Job, { JobProps } from '../Job'
 
-import SectionProps from '../common/Types';
-import amazonWebServices from '../images/experience-aws.svg';
-import freedomConsultingGroup from '../images/experience-freedom.svg';
-import towsonUniversity from '../images/experience-towson.svg';
+const { Title } = Typography
 
-const { Title, Paragraph, Text } = Typography
-const { Meta } = Card
-
-const jobs = [
+const jobs: JobProps[] = [
 	{
-		logo: towsonUniversity,
-		company: 'Towson University',
-		title: 'Mobile Application Developer',
-		description: "Created Android mobile app WavyLeaf to help Biology department's effort to track spread of Wavyleaf Basketgrass",
-	},
-	{
-		logo: freedomConsultingGroup,
-		company: 'Freedom Consulting Group',
-		title: 'Junior Software Engineer',
-		description: '',
-	},
-	{
-		logo: '',
-		company: 'Liberty Mountain Racing Team',
-		title: 'Lead U10 Ski Racing Coach',
-		description: "Led LMRT's U10 program in education of fundamentals of alpine ski racing",
-	},
-	{
-		logo: amazonWebServices,
 		company: 'Amazon Web Services',
+		description: 'Worked within Professional Services to create numerous proof-of-concepts demonstrating the abilities of AWS.  This included front ends, cloud services, and combinations of both.',
+		duration: ['2', 'yrs'],
+		logo: amazonWebServicesLogo,
 		title: 'Integration Architect',
-		description: '',
+		website: 'https://aws.amazon.com/professional-services/',
+	},
+	{
+		company: 'Freedom Consulting Group',
+		description: 'Implemented features in full-stack MEAN webapp for secure government customer.',
+		duration: ['5', 'yrs'],
+		logo: freedomConsultingGroupLogo,
+		title: 'Junior Software Engineer',
+		website: 'https://freedomconsultinggroup.com/',
+	},
+	{
+		company: 'Towson University',
+		description: "Created Android mobile app WavyLeaf to help Biology department's effort to track spread of Wavyleaf Basketgrass.",
+		duration: ['3', 'mon'],
+		logo: towsonUniversityLogo,
+		title: 'Mobile Application Developer',
+		website: 'https://www.towson.edu/',
+	},
+	{
+		company: 'Liberty Mountain Racing Team',
+		description: "Led LMRT's U10 program in education of fundamentals of alpine ski racing.",
+		duration: ['9', 'yrs'],
+		logo: libertyMountainRacingTeamLogo,
+		title: 'Lead U10 Ski Racing Coach',
+		website: 'https://www.teamunify.com/team/lmrtski/page/home',
 	},
 ]
 const Experience = ({ id }: SectionProps) => {
@@ -43,24 +50,15 @@ const Experience = ({ id }: SectionProps) => {
 			<Title level={2}>Experience</Title>
 			<Title level={4}>Some subtitle stuff</Title>
 
-			<Row>
-				{jobs.map(({ company, description, logo, title }, index) => {
-					return (
-						<Col xs={12} md={8} key={index}>
-							{/* TODO: remove url */}
-							<Card hoverable cover={<img alt="example" src={logo ?? 'https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png'} />}>
-								<Meta title={company} description={title} />
-
-								<div className="hidden-description">
-									<Paragraph strong>{company}</Paragraph>
-									<Paragraph>{title}</Paragraph>
-									<Text>{description}</Text>
-								</div>
-							</Card>
+			<div style={{ overflow: 'hidden' }}>
+				<Row gutter={[64, 64]}>
+					{jobs.map(({ company, logo, description, duration, title, website }, index) => (
+						<Col xs={24} md={8} key={index}>
+							<Job company={company} logo={logo} description={description} duration={duration} title={title} website={website} />
 						</Col>
-					)
-				})}
-			</Row>
+					))}
+				</Row>
+			</div>
 		</div>
 	)
 }

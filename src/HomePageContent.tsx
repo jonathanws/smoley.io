@@ -6,6 +6,7 @@ import React from 'react';
 import { columnWidths } from './pages/HomePage';
 
 const { Content } = Layout
+
 export type HomePageContentSection = {
 	anchor: string
 	title: string

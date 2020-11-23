@@ -10,7 +10,7 @@
 		.ant-col:nth-child(2) {
 			background-color: var(--background-color-darker); // TODO: remove once you have a picture
 			img {
-				min-height: 600px;
+				max-width: 200px;
 			}
 		}
 	}

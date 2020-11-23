@@ -1,10 +1,11 @@
-import './homePageHeader.scss';
+import './homePageHeader.scss'
 
-import { Anchor, Col, Layout, Row } from 'antd';
-import React, { useState } from 'react';
+import { Anchor, Col, Layout, Row } from 'antd'
+import React, { useState } from 'react'
 
-import { ReactComponent as MainLogo } from './images/logo.svg';
-import { columnWidths } from './pages/HomePage';
+import { ReactComponent as MainLogo } from './images/logo.svg'
+import { columnWidths } from './pages/HomePage'
+import ThemeSwitcher from './ThemeSwitcher'
 
 const { Link } = Anchor
 const { Header } = Layout
@@ -33,6 +34,8 @@ const HomePageHeader = ({ links }: HeaderProps) => {
 							<Link href={`#${anchor}`} title={title} key={anchor} />
 						))}
 					</Anchor>
+
+					<ThemeSwitcher />
 				</Col>
 			</Row>
 		</Header>

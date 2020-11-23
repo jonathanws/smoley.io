@@ -1,4 +1,5 @@
 @import './styles/mixins';
+@import './styles/global-styles.scss';
 
 .ant-layout-content > * {
 	&:nth-child(even) {
@@ -6,5 +7,15 @@
 	}
 	&:nth-child(odd) {
 		background-color: var(--background-color);
+	}
+}
+
+// Account for the height of the fixed header
+.ant-layout-content {
+	margin-top: 74px;
+}
+@include ant-size(sm) {
+	.ant-layout-content {
+		margin-top: 104px;
 	}
 }
