@@ -1,0 +1,217 @@
+$card-border-radius: 8px;
+
+.job-card {
+	border-radius: $card-border-radius;
+	position: relative;
+
+	.ant-card-cover {
+		img {
+			border-top-left-radius: $card-border-radius;
+			border-top-right-radius: $card-border-radius;
+		}
+	}
+
+	// .ant-card-body {
+	// 	.ant-card-meta-title {
+	// 		:nth-child (1) {
+	// 			color: red;
+	// 			// color: var(--accent-color);
+	// 			// color: var(--font-color);
+	// 		}
+	// 	}
+	// }
+
+	.ant-card-body {
+		.ant-card-meta-title {
+			:nth-child(1) {
+				// color: var(--font-color);
+				color: black; // TODO
+			}
+			:nth-child(2) {
+				color: var(--accent-color);
+			}
+		}
+	}
+
+	.circle {
+		$size: 55px;
+		width: $size;
+		height: $size;
+
+		// Put the circle in the top right
+		position: absolute;
+		$offset: 15px;
+		top: $offset;
+		right: $offset;
+
+		text-align: center;
+		border-radius: 50%;
+		background: var(--accent-color);
+		color: var(--font-color);
+		line-height: 18px;
+		font-weight: 700;
+		padding: 8px;
+		box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2),
+			0 1px 1px 0 rgba(0, 0, 0, 0.14),
+			0 1px 3px 0 rgba(0,0,0,.12);
+		
+		// img {
+		// 	$size: 60%;
+		// 	width: $size;
+		// 	height: $size;
+		// }
+
+		> :nth-child(1) {
+			font-size: 18px;
+		}
+		> :nth-child(2) {
+			font-size: 12px;
+			text-transform: uppercase;
+		}
+	}
+}
+
+// .job-card {
+// 	height: 400px; // TODO
+// 	border: 2px solid var(--accent-color);
+// 	border-radius: 8px;
+// 	background: transparent;
+// 	padding: 40px 20px;
+
+// 	.ant-card-cover {
+// 		display: flex;
+// 		justify-content: center;
+// 		.circle {
+// 			$size: 84px;
+// 			width: $size;
+// 			height: $size;
+
+// 			display: flex;
+// 			align-items: center;
+// 			justify-content: center;
+
+// 			border-radius: 50%;
+// 			background-color: white;
+// 			padding: 8px;
+// 			box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2),
+// 			0 1px 1px 0 rgba(0, 0, 0, 0.14),
+// 			0 1px 3px 0 rgba(0,0,0,.12);
+// 			img {
+// 				// TODO: add good sizes for mobile
+// 				// $size: 60%;
+// 				$size: 32px;
+// 				width: $size;
+// 				height: $size;
+// 			}
+// 		}
+// 	}
+// 	.ant-card-body {
+// 		padding: 0;
+// 		margin-top: 24px;
+
+// 		.ant-card-meta {
+// 			&-title, &-description {
+// 				text-align: center;
+// 			}
+// 			&-title {
+// 				color: var(--accent-color);
+// 			}
+// 			&-description {
+// 				color: var(--font-color);
+// 			}
+// 		}
+// 	}
+// }
+
+// // .job-card {
+// // 	min-height: 400px;
+// // 	border: 2px solid var(--accent-color);
+// // 	border-radius: 8px;
+// // 	background: transparent;
+
+// // 	.ant-card-cover {
+// // 		display: flex;
+// // 		justify-content: center;
+// // 		padding: 16px;
+// // 		.circle {
+// // 			$size: 100px;
+// // 			width: $size;
+// // 			height: $size;
+
+// // 			display: flex;
+// // 			align-items: center;
+// // 			justify-content: center;
+
+// // 			border-radius: 50%;
+// // 			background-color: white;
+// // 			padding: 8px;
+// // 			box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2),
+// // 						0 1px 1px 0 rgba(0, 0, 0, 0.14),
+// // 						0 1px 3px 0 rgba(0,0,0,.12);
+// // 		}
+// // 		img {
+// // 			// TODO: add good sizes for mobile
+// // 			$size: 60%;
+// // 			width: $size;
+// // 			height: $size;
+// // 		}
+// // 	}
+// // 	.ant-card-body {
+// // 		padding-top: 0;
+// // 		.ant-card-meta-title {
+// // 			color: var(--accent-color);
+// // 		}
+// // 		.ant-card-meta-description {
+// // 			color: var(--font-color);
+// // 		}
+// // 		.ant-card-meta-title, .ant-card-meta-description {
+// // 			text-align: center;
+// // 		}
+// // 	}
+// // 	.hidden-description {
+// // 		display: none;
+// // 	}
+
+// // 	&:hover {
+// // 		background-color: var(--accent-color);
+// // 		transition: 0.3s;
+// // 		.hidden-description {
+// // 			display: block;
+// // 		}
+// // 		.ant-card-cover .circle {
+// // 			$new-size: 55px;
+// // 			width: $new-size;
+// // 			height: $new-size;
+// // 			transition: 0.3s;
+// // 		}
+// // 	}
+
+// // 	// .hidden-description {
+// // 	// 	background-color: var(--accent-color);
+// // 	// 	position: absolute;
+// // 	// 	top: 0;
+// // 	// 	left: 0;
+// // 	// 	right: 0;
+// // 	// 	bottom: 0;
+// // 	// 	opacity: 0;
+// // 	// 	margin-top: 20px;
+// // 	// 	padding: 12px;
+// // 	// 	transition: 0.4s;
+// // 	// 	text-align: justify;
+// // 	// 	&:hover {
+// // 	// 		margin: 0;
+// // 	// 		opacity: 0.95;
+// // 	// 		transition: 0.4s;
+// // 	// 	}
+// // 	// 	div.ant-typography:nth-child(1) {
+// // 	// 		margin-bottom: 0;
+// // 	// 	}
+// // 	// 	div.ant-typography:nth-child(1),
+// // 	// 	div.ant-typography:nth-child(2) {
+// // 	// 		text-align: center;
+// // 	// 	}
+// // 	// 	.ant-typography {
+// // 	// 		color: var(--font-color);
+// // 	// 	}
+// // 	// }
+// // }

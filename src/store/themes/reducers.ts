@@ -4,18 +4,16 @@ const initialState: ThemeState = {
 	theme: THEME_DARK_ORANGE
 }
 
-export const themeReducer = (state = initialState, { payload, type }: ThemeActionTypes): ThemeState => {
-	let _state = state
+const setTheme = (state: ThemeState, { payload }: ThemeActionTypes): ThemeState => ({
+	...state,
+	theme: payload
+})
 
-	switch (type) {
+export const themeReducer = (state = initialState, action: ThemeActionTypes): ThemeState => {
+	switch (action.type) {
 		case SET_THEME:
-			_state = {
-				theme: payload
-			}
-			break
+			return setTheme(state, action)
 		default:
-			_state = state
+			return state
 	}
-
-	return _state
 }

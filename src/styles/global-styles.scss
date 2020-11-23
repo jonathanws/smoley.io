@@ -103,7 +103,7 @@ svg {
 }
 
 .padded-section {
-	> h2.ant-typography, h4.ant-typography {
+	> h2.ant-typography, > h4.ant-typography {
 		text-align: center;
 	}
 	
